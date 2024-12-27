@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>"User Registration Form"</title>
+    </head>
+    <body>
+    <form>
+        <label for="name">NAME:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="name">LAST NAME:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="name">PHONE NUMBER :</label><br>
+        <input type="tel" id="tel" name="tel" pattern="[0-9]{10}"><br><br>
+        <label for="email">EMAIL:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="password">PASSWORD:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+        <label for="confirmpassword">CONFIRM PASSWORD</label><br><br>
+        <input type= "confirmpassword" id="confirmpassword" name="confirmpassword"><br><br>
+    </form>
+    <button onclick="displaysuccess()">REGISTER</button>
+    </body>
+    <script>
+        function displaysuccess()
+        {
+            const mobilnum=document.getElementById("tel").value.trim();
+            const pass=document.getElementById("password").value;
+            const confirm =document.getElementById("confirmpassword").value;
+            const mobilepattern=/^[0-9]{10}$/;
+            if(!mobilepattern.test(mobilnum))
+            {
+                alert("mobile number should be of 10 digits");
+                return;
+            }
+            if(pass!=confirm)
+            {
+                alert('password and confirm password must be same');
+                return ;
+            }
+            alert("registered successfully");
+        }
+    </script>
+</html>
